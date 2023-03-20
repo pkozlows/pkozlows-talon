@@ -92,6 +92,10 @@ def any_alphanumeric_key(m) -> str:
     "any alphanumeric key"
     return str(m)
 
+@mod.capture(rule="( <self.letter> | <number> )")
+def letter_or_number(m) -> str:
+    "any letter or number"
+    return str(m)
 
 @mod.capture(
     rule="( <self.letter> | <self.number_key> | <self.symbol_key> "
@@ -128,7 +132,7 @@ ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
     "alt": "alt",  #'alter': 'alt',
-    "control": "ctrl",  #'troll':   'ctrl',
+    "cholly": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
 }
@@ -152,8 +156,9 @@ punctuation_words = {
     "coma": ",",
     "period": ".",
     "full stop": ".",
-    "semicolon": ";",
-    "colon": ":",
+    "dot": ".",
+    "half stack": ";",
+    "stack": ":",
     "forward slash": "/",
     "question mark": "?",
     "exclamation mark": "!",
@@ -175,11 +180,11 @@ symbol_key_words = {
     "quote": "'",
     "question": "?",
     "apostrophe": "'",
-    "L square": "[",
-    "left square": "[",
-    "square": "[",
-    "R square": "]",
-    "right square": "]",
+    "L box": "[",
+    "left box": "[",
+    "box": "[",
+    "R box": "]",
+    "right box": "]",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
@@ -190,11 +195,11 @@ symbol_key_words = {
     "bang": "!",
     "down score": "_",
     "underscore": "_",
-    "paren": "(",
-    "L paren": "(",
-    "left paren": "(",
-    "R paren": ")",
-    "right paren": ")",
+    "parent": "(",
+    "L parent": "(",
+    "left parent": "(",
+    "R parent": ")",
+    "right parent": ")",
     "brace": "{",
     "left brace": "{",
     "brack": "{",

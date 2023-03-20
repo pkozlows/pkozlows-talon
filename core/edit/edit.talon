@@ -2,66 +2,66 @@ find it: edit.find()
 
 next one: edit.find_next()
 
-go word left: edit.word_left()
+go word last: edit.word_left()
 
-go word right: edit.word_right()
+go word next: edit.word_right()
 
-go left: edit.left()
+go last: edit.left()
 
-go right: edit.right()
+go next: edit.right()
 
-go up: edit.up()
+go fly: edit.up()
 
-go down: edit.down()
+go rain: edit.down()
 
 go line start: edit.line_start()
 
 go line end: edit.line_end()
 
-go way left:
+go way last:
     edit.line_start()
     edit.line_start()
 
-go way right: edit.line_end()
+go way next: edit.line_end()
 
-go way down: edit.file_end()
+go way rain: edit.file_end()
 
-go way up: edit.file_start()
+go way fly: edit.file_start()
 
 go bottom: edit.file_end()
 
 go top: edit.file_start()
 
-go page down: edit.page_down()
+go page rain: edit.page_down()
 
-go page up: edit.page_up()
+go page fly: edit.page_up()
 
 # selecting
 select line: edit.select_line()
 
 select all: edit.select_all()
 
-select left: edit.extend_left()
+select last: edit.extend_left()
 
-select right: edit.extend_right()
+select next: edit.extend_right()
 
-select up: edit.extend_line_up()
+select fly: edit.extend_line_up()
 
-select down: edit.extend_line_down()
+select rain: edit.extend_line_down()
 
 select word: edit.select_word()
 
-select word left: edit.extend_word_left()
+select word last: edit.extend_word_left()
 
-select word right: edit.extend_word_right()
+select word next: edit.extend_word_right()
 
-select way left: edit.extend_line_start()
+select way last: edit.extend_line_start()
 
-select way right: edit.extend_line_end()
+select way next: edit.extend_line_end()
 
-select way up: edit.extend_file_start()
+select way fly: edit.extend_file_start()
 
-select way down: edit.extend_file_end()
+select way rain: edit.extend_file_end()
 
 # editing
 indent [more]: edit.indent_more()
@@ -71,41 +71,41 @@ indent [more]: edit.indent_more()
 # deleting
 clear line: edit.delete_line()
 
-clear left: key(backspace)
+clear last: key(backspace)
 
-clear right: key(delete)
+clear next: key(delete)
 
-clear up:
+clear fly:
     edit.extend_line_up()
     edit.delete()
 
-clear down:
+clear rain:
     edit.extend_line_down()
     edit.delete()
 
 clear word: edit.delete_word()
 
-clear word left:
+clear word last:
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+clear word next:
     edit.extend_word_right()
     edit.delete()
 
-clear way left:
+clear way last:
     edit.extend_line_start()
     edit.delete()
 
-clear way right:
+clear way next:
     edit.extend_line_end()
     edit.delete()
 
-clear way up:
+clear way fly:
     edit.extend_file_start()
     edit.delete()
 
-clear way down:
+clear way rain:
     edit.extend_file_end()
     edit.delete()
 
@@ -118,16 +118,16 @@ copy all:
     edit.select_all()
     edit.copy()
 #to do: do we want these variants, seem to conflict
-# copy left:
+# copy last:
 #      edit.extend_left()
 #      edit.copy()
-# copy right:
+# copy next:
 #     edit.extend_right()
 #     edit.copy()
-# copy up:
+# copy fly:
 #     edit.extend_up()
 #     edit.copy()
-# copy down:
+# copy rain:
 #     edit.extend_down()
 #     edit.copy()
 
@@ -135,9 +135,9 @@ copy word:
     edit.select_word()
     edit.copy()
 
-copy word left: user.copy_word_left()
+copy word last: user.copy_word_left()
 
-copy word right: user.copy_word_right()
+copy word next: user.copy_word_right()
 
 copy line:
     edit.select_line()
@@ -148,16 +148,16 @@ cut all:
     edit.select_all()
     edit.cut()
 #to do: do we want these variants
-# cut left:
+# cut last:
 #      edit.select_all()
 #      edit.cut()
-# cut right:
+# cut next:
 #      edit.select_all()
 #      edit.cut()
-# cut up:
+# cut fly:
 #      edit.select_all()
 #     edit.cut()
-# cut down:
+# cut rain:
 #     edit.select_all()
 #     edit.cut()
 
@@ -165,9 +165,9 @@ cut word:
     edit.select_word()
     edit.cut()
 
-cut word left: user.cut_word_left()
+cut word last: user.cut_word_left()
 
-cut word right: user.cut_word_right()
+cut word next: user.cut_word_right()
 
 cut line: user.cut_line()
 

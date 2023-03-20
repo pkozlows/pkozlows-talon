@@ -10,7 +10,7 @@ tag: user.python
 ctx.lists["user.code_common_function"] = {
     "enumerate": "enumerate",
     "integer": "int",
-    "length": "len",
+    "long": "len",
     "list": "list",
     "print": "print",
     "range": "range",
@@ -18,6 +18,9 @@ ctx.lists["user.code_common_function"] = {
     "split": "split",
     "string": "str",
     "update": "update",
+    # personal
+    "maximum": "max",
+    "minimum": "min",        
 }
 
 """a set of fields used in python docstrings that will follow the
