@@ -2,13 +2,14 @@ control mouse: tracking.control_toggle()
 zoom mouse: tracking.control_zoom_toggle()
 camera overlay: tracking.control_debug_toggle()
 run calibration: tracking.calibrate()
-touch:
-    mouse_click(0)
-    # close the mouse grid if open
-    user.grid_close()
-    # End any open drags
-    # Touch automatically ends left drags so this is for right drags specifically
-    user.mouse_drag_end()
+
+# touch:
+#     mouse_click(0)
+#     # close the mouse grid if open
+#     user.grid_close()
+#     # End any open drags
+#     # Touch automatically ends left drags so this is for right drags specifically
+#     user.mouse_drag_end()
 
 righty:
     mouse_click(1)
@@ -39,7 +40,7 @@ mid click:
     key("{modifiers}:up")
     # close the mouse grid
     user.grid_close()
-(dub click | duke):
+dub click:
     mouse_click()
     mouse_click()
     # close the mouse grid
@@ -50,7 +51,7 @@ mid click:
     mouse_click()
     # close the mouse grid
     user.grid_close()
-left drag | drag:
+left drag:
     user.mouse_drag(0)
     # close the mouse grid
     user.grid_close()

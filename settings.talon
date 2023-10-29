@@ -1,5 +1,8 @@
 -
 settings():
+    # axkit stuff
+    user.context_sensitive_dictation = 1
+    user.accessibility_dictation = 1
     # Adjust the scale of the imgui to my liking
     imgui.scale = 1.3
 

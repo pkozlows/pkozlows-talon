@@ -20,7 +20,9 @@ ctx.lists["user.code_common_function"] = {
     "update": "update",
     # personal
     "maximum": "max",
-    "minimum": "min",        
+    "minimum": "min",
+    "sort": "sorted",
+    "assert": "assert",
 }
 
 """a set of fields used in python docstrings that will follow the

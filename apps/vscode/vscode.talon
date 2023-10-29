@@ -11,10 +11,10 @@ window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
 #multiple_cursor.py support end
 
-please [<user.text>]:
-    user.vscode("workbench.action.showCommands")
-    insert(user.text or "")
-
+# please [<user.text>]:
+#     user.vscode("workbench.action.showCommands")
+#     insert(user.text or "")
+ 
 # Sidebar
 bar explore: user.vscode("workbench.view.explorer")
 bar extensions: user.vscode("workbench.view.extensions")
@@ -62,36 +62,36 @@ theme switch: user.vscode("workbench.action.selectTheme")
 wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
-# File Commands
-file hunt [<user.text>]:
+# dock Commands
+dock hunt [<user.text>]:
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
     insert(text or "")
-file hunt (pace | paste):
+dock hunt (pace | paste):
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
     edit.paste()
-file copy name: user.vscode("fileutils.copyFileName")
-file copy path: user.vscode("copyFilePath")
-file copy local [path]: user.vscode("copyRelativeFilePath")
-file create sibling: user.vscode_and_wait("explorer.newFile")
-file create: user.vscode("workbench.action.files.newUntitledFile")
-file create relative: user.vscode("fileutils.newFile")
-file create root: user.vscode("fileutils.newFileAtRoot")
-file rename:
+dock copy name: user.vscode("fileutils.copyFileName")
+dock copy path: user.vscode("copyFilePath")
+dock copy local [path]: user.vscode("copyRelativeFilePath")
+dock make sib: user.vscode_and_wait("explorer.newFile")
+# dock create: user.vscode("workbench.action.files.newUntitledFile")
+dock create relative: user.vscode("fileutil.newFile")
+dock create root: user.vscode("fileutils.newFileAtRoot")
+dock rename:
     user.vscode("fileutils.renameFile")
     sleep(150ms)
-file move:
+dock move:
     user.vscode("fileutils.moveFile")
     sleep(150ms)
-file clone:
+dock clone:
     user.vscode("fileutils.duplicateFile")
     sleep(150ms)
-file delete:
+dock delete:
     user.vscode("fileutils.removeFile")
     sleep(150ms)
-file open folder: user.vscode("revealFileInOS")
-file reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
+dock open folder: user.vscode("revealFileInOS")
+dock reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
 save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
 
 # Language Features
@@ -168,6 +168,12 @@ git commit [<user.text>]:
     user.vscode("git.commitStaged")
     sleep(100ms)
     user.insert_formatted(text or "", "CAPITALIZE_FIRST_WORD")
+git commit <user.prose> close:
+    user.git_commit(prose or "")
+    edit.save()
+    sleep(150ms)
+    app.tab_close()
+    sleep(250ms)
 git commit undo: user.vscode("git.undoCommit")
 git commit amend: user.vscode("git.commitStagedAmend")
 git diff: user.vscode("git.openChange")
@@ -216,7 +222,6 @@ break point: user.vscode("editor.debug.action.toggleBreakpoint")
 step over: user.vscode("workbench.action.debug.stepOver")
 debug step into: user.vscode("workbench.action.debug.stepInto")
 debug step out [of]: user.vscode("workbench.action.debug.stepOut")
-debug start: user.vscode("workbench.action.debug.start")
 debug pause: user.vscode("workbench.action.debug.pause")
 debug stopper: user.vscode("workbench.action.debug.stop")
 debug continue: user.vscode("workbench.action.debug.continue")
@@ -278,4 +283,6 @@ install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
 
 #personal
-run file: user.vscode("workbench.action.debug.start")
+run dock: user.vscode("workbench.action.debug.start")
+next one: user.vscode_and_wait("jumpToNextSnippetPlaceholder")
+snip last: user.vscode("jumpToPrevSnippetPlaceholder")

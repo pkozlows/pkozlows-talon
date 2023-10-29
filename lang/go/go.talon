@@ -72,9 +72,9 @@ while <user.text> [over]:
     insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
 
 state for: "for "
-for <user.text> [over]:
-    insert("for ")
-    insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
+# for <user.text> [over]:
+    # insert("for ")
+    # insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
 
 state for range: "forr "
 range <user.text> [over]:

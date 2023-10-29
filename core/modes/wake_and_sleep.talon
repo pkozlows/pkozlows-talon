@@ -13,5 +13,5 @@ mode: all
     user.mouse_(sleep | seep)()
     speech.disable()
     user.engine_(sleep | seep)()
-^(tal lent | talent | talon) (sleep | seep) [<phrase>]$: speech.disable()
-^(tal lent | talent | talon) wake$: speech.enable()
+^go to sleep [<phrase>]$: speech.disable()
+^wake up from sleep$: speech.enable()

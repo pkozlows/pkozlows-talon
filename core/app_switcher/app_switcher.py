@@ -104,7 +104,7 @@ if app.platform == "windows":
         wintypes.DWORD,  # dwFlags
         wintypes.HANDLE,  # hToken
         _PPITEMIDLIST,
-    )  # ppidl
+    )  # ppidlc
 
     def get_known_folder_id_list(folder_id, htoken=None):
         if isinstance(folder_id, pywintypes.IIDType):

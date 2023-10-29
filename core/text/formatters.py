@@ -138,7 +138,7 @@ formatters_dict = {
 formatters_words = {
     "all cap": formatters_dict["ALL_CAPS"],
     "all down": formatters_dict["ALL_LOWERCASE"],
-    "camel": formatters_dict["PRIVATE_CAMEL_CASE"],
+    "camel case": formatters_dict["PRIVATE_CAMEL_CASE"],
     "dotted": formatters_dict["DOT_SEPARATED"],
     "dub string": formatters_dict["DOUBLE_QUOTED_STRING"],
     "dunder": formatters_dict["DOUBLE_UNDERSCORE"],

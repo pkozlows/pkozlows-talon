@@ -1,5 +1,6 @@
 from talon import Context, Module, actions, app
 
+
 is_mac = app.platform == "mac"
 
 ctx = Context()
@@ -153,6 +154,12 @@ class Actions:
     def command_palette():
         """Show command palette"""
         actions.key("ctrl-shift-p")
+    
+    def git_commit(text: str):
+        """Git commit"""
+        actions.user.vscode("git.commitStaged")
+        actions.sleep("500ms")
+        actions.user.insert_formatted(text, "CAPITALIZE_FIRST_WORD")
 
 
 @mac_ctx.action_class("user")
@@ -376,3 +383,4 @@ class UserActions:
         actions.edit.find(text)
         actions.sleep("100ms")
         actions.key("esc")
+

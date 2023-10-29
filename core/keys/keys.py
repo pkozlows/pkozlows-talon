@@ -133,7 +133,7 @@ modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
     "alt": "alt",  #'alter': 'alt',
     "cholly": "ctrl",  #'troll':   'ctrl',
-    "shift": "shift",  #'sky':     'shift',
+    "ship": "shift",  #'sky':     'shift',
     "super": "super",
 }
 if app.platform == "mac":
@@ -153,9 +153,8 @@ punctuation_words = {
     "comma": ",",
     # Workaround for issue with conformer b-series; see #946
     "coma": ",",
-    "period": ".",
     "full stop": ".",
-    "dot": ".",
+    "spot": ".",
     "half stack": ";",
     "stack": ":",
     "forward slash": "/",
@@ -179,8 +178,8 @@ punctuation_words = {
     "right paren": ")",
 }
 symbol_key_words = {
-    "dot": ".",
-    "point": ".",
+    "spot": ".",
+    # "point": ".",
     "quote": "'",
     "question": "?",
     "apostrophe": "'",
@@ -189,15 +188,16 @@ symbol_key_words = {
     "box": "[",
     "R box": "]",
     "right box": "]",
+    "next box": "]",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
     "dash": "-",
-    "equals": "=",
+    "match": "=",
     "plus": "+",
-    "grave": "`",
+    "gravy": "`",
     "tilde": "~",
-    "bang": "!",
+    # "bang": "!",
     "down score": "_",
     "underscore": "_",
     "parent": "(",
@@ -205,11 +205,12 @@ symbol_key_words = {
     "left parent": "(",
     "R parent": ")",
     "right parent": ")",
+    "next parent": ")",
     "brace": "{",
     "left brace": "{",
-    "brack": "{",
-    "bracket": "{",
-    "left bracket": "{",
+    # "brack": "{",
+    # "bracket": "{",
+    # "left bracket": "{",
     "r brace": "}",
     "right brace": "}",
     "r brack": "}",
@@ -225,10 +226,11 @@ symbol_key_words = {
     "star": "*",
     "hash": "#",
     "percent": "%",
-    "caret": "^",
+    "carrot stick": "^",
     "amper": "&",
     "pipe": "|",
     "dub quote": '"',
+    "quad": '"',
     "double quote": '"',
     # Currencies
     "dollar": "$",
@@ -248,15 +250,14 @@ ctx.lists["self.arrow_key"] = {
 }
 
 simple_keys = [
-    "end",
+    "ending",
     "enter",
     "escape",
     "home",
-    "insert",
+    # "insert",
     "pagedown",
     "pageup",
     "space",
-    "tab",
 ]
 
 alternate_keys = {
