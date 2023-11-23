@@ -13,6 +13,12 @@ window close: user.vscode("workbench.action.closeWindow")
 # please [<user.text>]:
 #     user.vscode("workbench.action.showCommands")
 #     insert(user.text or "")
+
+# Find session
+pop sesh {user.vscode_sessions}$:
+    user.vscode_find_recent(vscode_sessions)
+    sleep(150ms)
+    key(enter)
  
 # Sidebar
 bar explore: user.vscode("workbench.view.explorer")
@@ -285,6 +291,6 @@ install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
 
 #personal
-run dock: user.vscode("workbench.action.debug.start")
+test dock: user.vscode("workbench.action.debug.start")
 next one: user.vscode_and_wait("jumpToNextSnippetPlaceholder")
 snip last: user.vscode("jumpToPrevSnippetPlaceholder")

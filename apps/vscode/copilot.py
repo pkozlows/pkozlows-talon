@@ -14,10 +14,10 @@ ctx.lists["user.copilot_slash_command"] = {
     "test": "test",
     "fix": "fix",
     "explain": "explain",
-    "change": "",
+    "change": "change",
 }
 
-mod.list("makeshift_destination", "Cursorless makeshift destination")
+
 ctx.lists["user.makeshift_destination"] = {
     "to": "clearAndSetSelection",
     "after": "editNewLineAfter",

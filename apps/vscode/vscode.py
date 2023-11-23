@@ -51,6 +51,14 @@ os: mac
 app: vscode
 """
 
+mod.list("vscode_sessions", "Known vscode sessions/workspaces")
+ctx.lists["user.vscode_sessions"] = {
+    "user": "user",
+    "senior thesis": "senior_thesis",
+    "gallium nitride": "GaN",
+    "fall": "f23",
+    "graduate": "graduate",
+}
 
 @ctx.action_class("app")
 class AppActions:
@@ -160,6 +168,14 @@ class Actions:
         actions.user.vscode("git.commitStaged")
         actions.sleep("500ms")
         actions.user.insert_formatted(text, "CAPITALIZE_FIRST_WORD")
+
+    def vscode_find_recent(text: str = None):
+        """Find recent session, directory or file"""
+        actions.user.vscode("workbench.action.openRecent")
+        if text:
+            actions.sleep("150ms")
+            actions.insert(text)
+
 
 
 @mac_ctx.action_class("user")

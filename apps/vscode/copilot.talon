@@ -1,6 +1,6 @@
 app: vscode
 -
-pilot jest: user.vscode("editor.action.inlineSuggest.trigger")
+pilot jest: user.vscode("editor.action.inlineSuggest.trigsecond   ger")
 pilot next: user.vscode("editor.action.inlineSuggest.showNext")
 pilot last: user.vscode("editor.action.inlineSuggest.showPrevious")
 pilot yes: user.vscode("editor.action.inlineSuggest.commit")
