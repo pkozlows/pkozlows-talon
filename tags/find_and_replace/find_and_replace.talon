@@ -63,9 +63,9 @@ go last clip:
     user.select_previous_occurrence(clip.text())
     sleep(100ms)
     edit.right()
-go next <user.text> [over]:
-    user.select_next_occurrence(text)
-    edit.right()
+# go next <user.text> [over]:
+#     user.select_next_occurrence(text)
+#     edit.right()
 go next clip:
     user.select_next_occurrence(clip.text())
     edit.right()

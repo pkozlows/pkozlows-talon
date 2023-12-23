@@ -1,4 +1,4 @@
-from talon import Context, Module, actions, app, clip
+from talon import Context, Module, actions
 
 mod = Module()
 ctx = Context()
@@ -11,13 +11,14 @@ mod.list(
     "copilot_slash_command", "Slash commands that can be used with copilot, e.g. /test"
 )
 ctx.lists["user.copilot_slash_command"] = {
-    "test": "test",
+    "test": "tests",
+    "dock": "doc",
     "fix": "fix",
     "explain": "explain",
-    "change": "change",
+    "change": "",
 }
 
-
+mod.list("makeshift_destination", "Cursorless makeshift destination")
 ctx.lists["user.makeshift_destination"] = {
     "to": "clearAndSetSelection",
     "after": "editNewLineAfter",
@@ -27,12 +28,14 @@ ctx.lists["user.makeshift_destination"] = {
 
 @mod.action_class
 class Actions:
-    def copilot_inline_chat(
-        copilot_slash_command: str, cursorless_target: dict, prose: str
-    ):
+    def copilot_inline_chat(copilot_slash_command: str = "", prose: str = ""):
         """Initiate copilot inline chat session"""
-        actions.user.cursorless_command("setSelection", cursorless_target)
-        actions.user.vscode("interactiveEditor.start")
+        actions.user.run_rpc_command(
+            "editor.action.codeAction",
+            {
+                "kind": "refactor.rewrite",
+            },
+        )
         has_content = copilot_slash_command or prose
         if has_content:
             actions.sleep("50ms")
@@ -66,3 +69,4 @@ class Actions:
     def copilot_bring_code_block(index: int):
         """Bring a copilot chat suggestion to the cursor"""
         actions.user.copilot_focus_code_block(index)
+        actions.user.vscode("workbench.action.chat.insertCodeBlock")

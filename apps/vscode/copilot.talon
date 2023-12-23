@@ -1,6 +1,6 @@
 app: vscode
 -
-pilot jest: user.vscode("editor.action.inlineSuggest.trigsecond   ger")
+pilot jest: user.vscode("editor.action.inlineSuggest.trigger")
 pilot next: user.vscode("editor.action.inlineSuggest.showNext")
 pilot last: user.vscode("editor.action.inlineSuggest.showPrevious")
 pilot yes: user.vscode("editor.action.inlineSuggest.commit")
@@ -22,7 +22,7 @@ pilot bring <user.ordinal_or_last> {user.makeshift_destination} <user.cursorless
 pilot chat [<user.prose>]$:
     user.copilot_chat(prose or "")
 pilot {user.copilot_slash_command} <user.cursorless_target> [to <user.prose>]$:
-    user.copilot_inline_chat(copilot_slash_command or "", cursorless_target, prose or "")
-pilot clear <user.cursorless_target>:
-    user.cursorless_command("clearAndSetSelection", cursorless_target)
-    user.vscode("editor.action.inlineSuggest.trigger")
+    user.cursorless_command("setSelection", cursorless_target)
+    user.copilot_inline_chat(copilot_slash_command or "", prose or "")
+pilot make [<user.prose>]:
+    user.copilot_inline_chat("", prose or "")
