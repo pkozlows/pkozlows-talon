@@ -181,18 +181,18 @@ cut word left: user.cut_word_left()
 
 cut word right: user.cut_word_right()
 
-cut line: user.cut_line()
+# cut line: user.cut_line()
 
-(pace | paste) all:
+pace all:
     edit.select_all()
     edit.paste()
     key(enter)
 paste match: edit.paste_match_style()
-(pace | paste) all: user.paste_all()
-(pace | paste) line: user.paste_line()
-(pace | paste) line start: user.paste_line_start()
-(pace | paste) line end: user.paste_line_end()
-(pace | paste) word: user.paste_word()
+pace all: user.paste_all()
+pace line: user.paste_line()
+pace line start: user.paste_line_start()
+pace line end: user.paste_line_end()
+pace word: user.paste_word()
 
 # Duplication
 clone that: edit.selection_clone()
@@ -200,11 +200,11 @@ clone line: edit.line_clone()
 
 # Insert new line
 new line above: edit.line_insert_up()
-new line below | slap: edit.line_insert_down()
+new line below: edit.line_insert_down()
 
 # Insert padding with optional symbols
-(pad | padding): user.insert_between(" ", " ")
-(pad | padding) <user.symbol_key>+:
+padding: user.insert_between(" ", " ")
+padding <user.symbol_key>+:
     insert(" ")
     user.insert_many(symbol_key_list)
     insert(" ")

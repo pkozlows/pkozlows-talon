@@ -11,6 +11,7 @@ mod.setting(
 ctx = Context()
 ctx.matches = r"""
 code.language: c
+code.language: cpp
 """
 
 ctx.lists["self.c_pointers"] = {
@@ -46,7 +47,6 @@ ctx.lists["self.stdint_types"] = {
     "double": "double",
     "struct": "struct",
     "struck": "struct",
-    "num": "enum",
     "union": "union",
     "float": "float",
 }
@@ -62,7 +62,6 @@ ctx.lists["self.c_types"] = {
     "double": "double",
     "struct": "struct",
     "struck": "struct",
-    "num": "enum",
     "union": "union",
     "float": "float",
 }

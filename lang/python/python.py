@@ -23,6 +23,7 @@ ctx.lists["user.code_common_function"] = {
     "minimum": "min",
     "sort": "sorted",
     "assert": "assert",
+    "latex": "latex",
 }
 
 """a set of fields used in python docstrings that will follow the

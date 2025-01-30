@@ -8,11 +8,10 @@ tag(): user.splits
 tag(): user.tabs
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
-#multiple_cursor.py support end
 
-# please [<user.text>]:
-#     user.vscode("workbench.action.showCommands")
-#     insert(user.text or "")
+please [<user.text>]:
+    user.vscode("workbench.action.showCommands")
+    insert(user.text or "")
 
 # Find session
 pop sesh {user.vscode_sessions}$:
@@ -240,10 +239,7 @@ debug clean: user.vscode("workbench.debug.panel.action.clearReplAction")
 # Terminal
 terminal external: user.vscode("workbench.action.terminal.openNativeConsole")
 terminal new: user.vscode("workbench.action.terminal.new")
-terminal next: user.vscode("workbench.action.terminal.focusNext")
-terminal last: user.vscode("workbench.action.terminal.focusPrevious")
-terminal split: user.vscode("workbench.action.terminal.split")
-terminal zoom: user.vscode("workbench.action.toggleMaximizedPanel")
+terminal zoom: user.vscode("workbench.action.terminal.moveToEditor")
 terminal trash: user.vscode("workbench.action.terminal.kill")
 terminal toggle: user.vscode_and_wait("workbench.action.terminal.toggleTerminal")
 terminal scroll up: user.vscode("workbench.action.terminal.scrollUp")
@@ -287,6 +283,8 @@ cell last: user.vscode("notebook.focusPreviousEditor")
 cell run above: user.vscode("notebook.cell.executeCellsAbove")
 cell run: user.vscode("notebook.cell.execute")
 
+test cell: user.vscode("jupyter.runAndDebugCell")
+
 install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
 
@@ -294,3 +292,8 @@ preview markdown: user.vscode("markdown.showPreview")
 test dock: user.vscode("workbench.action.debug.start")
 next one: user.vscode_and_wait("jumpToNextSnippetPlaceholder")
 snip last: user.vscode("jumpToPrevSnippetPlaceholder")
+latex recipe: user.vscode("latex-workshop.recipes")
+build latex {user.latex_recipes}:
+    user.vscode("latex-workshop.recipes")
+    insert(latex_recipes)
+    key(enter)

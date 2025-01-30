@@ -13,6 +13,8 @@ os: mac
 and app.bundle: com.microsoft.VSCodeInsiders
 os: mac
 and app.bundle: com.visualstudio.code.oss
+os: mac
+and app.bundle: com.todesktop.230313mzl4w4u92
 """
 mod.apps.vscode = """
 os: linux
@@ -54,10 +56,30 @@ app: vscode
 mod.list("vscode_sessions", "Known vscode sessions/workspaces")
 ctx.lists["user.vscode_sessions"] = {
     "user": "user",
+    "hertz": "hertz",
     "senior thesis": "senior_thesis",
     "gallium nitride": "GaN",
     "fall": "f23",
+    "winter": "w24",
     "graduate": "graduate",
+    "thermal": "ch164",
+    "quantum": "ph125b",
+    "spectroscopy": "ch126",
+    "computer": "ph121c",
+    "equilibrium": "ch14",
+    "non linear": "ch226",
+    "fellowship": "2024",
+    "harvard": "harvard",
+    "June": "joonho",
+    "QC PDC": "qcpbc",
+}
+
+mod.list("latex_recipes", "Known latex recipes")
+ctx.lists["user.latex_recipes"] = {
+    "P D F": "pdflatex",
+    "biber": "biber",
+    "ex eee": "xelatex",
+    "lua": "lualatex",
 }
 
 @ctx.action_class("app")
